@@ -1,156 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Contacto | [Tu Nombre]</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        .social-icon:hover {
-            transform: scale(1.2);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ingeniería e Innovación Daniel Sierra | Daniel Felipe Sierra Carvajal</title>
+  <meta name="description" content="Ingeniería e Innovación Daniel Sierra: soluciones en instalaciones eléctricas, gabinetes profesionales con UPS, CCTV, sensórica, audio, redes y alumbrado, cumpliendo RETIE y RETILAB." />
+  <meta name="theme-color" content="#0f172a">
+
+  <style>
+    :root{
+      --bg:#0b1220;          /* fondo oscuro elegante */
+      --panel:#0f172a;       /* panel/cards */
+      --text:#e5e7eb;        /* texto principal */
+      --muted:#9ca3af;       /* texto secundario */
+      --brand:#22c55e;       /* acento */
+      --accent:#38bdf8;      /* acento 2 */
+      --border:#1f2937;      /* bordes */
+      --maxw:1000px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.12), transparent 60%),
+                  radial-gradient(900px 600px at 110% 10%, rgba(34,197,94,.10), transparent 60%),
+                  var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:24px}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:18px 22px; background:rgba(15,23,42,.6);
+      border:1px solid var(--border); border-radius:var(--radius);
+      backdrop-filter: blur(6px);
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px; text-decoration:none;
+    }
+    .logo{
+      width:44px; height:44px; display:grid; place-items:center;
+      border-radius:10px; background:linear-gradient(135deg,#111827,#0b1220);
+      border:1px solid var(--border);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .brand h1{font-size:18px; margin:0; line-height:1.2}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap}
+
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:12px; text-decoration:none;
+      border:1px solid var(--border); background:#0b1426;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color:#334155}
+    .btn--brand{background: linear-gradient(180deg, #16a34a, #15803d); border-color: rgba(255,255,255,.06);}
+    .btn--brand:hover{filter: brightness(1.05)}
+    .btn svg{width:18px; height:18px; flex:0 0 auto}
+
+    .hero{
+      margin-top:24px; padding:42px 26px;
+      background: linear-gradient(180deg, rgba(15,23,42,.8), rgba(2,6,23,.8));
+      border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow);
+    }
+    .hero h2{font-size:28px; margin:0 0 6px}
+    .hero p.lead{margin:0 0 18px; color:var(--muted)}
+    .grid{
+      display:grid; gap:16px; margin-top:18px;
+      grid-template-columns: repeat(12, minmax(0,1fr));
+    }
+    .card{
+      grid-column: span 12;
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:20px;
+    }
+    @media (min-width:720px){
+      .card.span-7{grid-column: span 7;}
+      .card.span-5{grid-column: span 5;}
+      .card.span-6{grid-column: span 6;}
+      .hero h2{font-size:34px}
+    }
+    .card h3{margin:0 0 8px; font-size:20px}
+    .muted{color:var(--muted)}
+    ul.clean{margin:10px 0 0 0; padding-left:18px}
+    li+li{margin-top:6px}
+    .kpis{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px}
+    .kpi{padding:10px 12px; border:1px dashed #334155; border-radius:12px; font-size:13px; color:#cbd5e1; background:#0b1426}
+    footer{
+      margin:26px 0 10px; color:var(--muted); font-size:13px; text-align:center;
+    }
+    .divider{height:1px; background:linear-gradient(90deg, transparent, #1f2937, transparent); margin:18px 0}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#cbd5e1; padding:8px 10px; border-radius:999px; border:1px solid var(--border); background:#0b1426}
+    .nowrap{white-space:nowrap}
+    .nowrap a{word-break:keep-all}
+    .copy-mail{font-variant-ligatures: no-contextual;}
+  </style>
 </head>
-<body class="min-h-screen bg-gray-50 font-sans">
-    <div class="gradient-bg text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-white overflow-hidden">
-                <!-- Reemplaza con tu foto o un avatar -->
-                <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" 
-                     alt="Foto de perfil" class="w-full h-full object-cover">
-            </div>
-            <h1 class="text-3xl sm:text-4xl font-bold mb-2">[Tu Nombre]</h1>
-            <p class="text-xl opacity-90 mb-6">[Tu Profesión o Rol]</p>
-            <p class="max-w-xl mx-auto text-lg opacity-80">¡Hola! Estoy encantado de conectarme contigo. Aquí encontrarás todas las formas de contactarme.</p>
-        </div>
-    </div>
+<body>
+  <div class="wrap">
+    <!-- ENCABEZADO -->
+    <header aria-label="Encabezado del sitio">
+      <a class="brand" href="#" aria-label="Inicio">
+        <span class="logo" aria-hidden="true">
+          <!-- Marca mínima (monograma DS) -->
+          <svg viewBox="0 0 64 64" role="img" aria-label="Logo DS">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#38bdf8"/>
+                <stop offset="1" stop-color="#22c55e"/>
+              </linearGradient>
+            </defs>
+            <rect x="6" y="6" width="52" height="52" rx="12" fill="none" stroke="url(#g1)" stroke-width="2.4"/>
+            <path d="M20 44V20h9.5c6.5 0 10.5 3.8 10.5 9.9S36 44 29.5 44H20zM28.8 27.5h-4.2v9h4.2c3.6 0 5.8-1.9 5.8-4.5s-2.2-4.5-5.8-4.5z" fill="url(#g1)"/>
+          </svg>
+        </span>
+        <span>
+          <h1>Ingeniería e Innovación Daniel Sierra</h1>
+          <p>Daniel Felipe Sierra Carvajal · Líder de proyecto</p>
+        </span>
+      </a>
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Tarjeta de Contacto -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
-                            <i class="fas fa-envelope fa-lg"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold text-gray-800">Información de Contacto</h2>
-                    </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope text-gray-500 mr-3 w-5 text-center"></i>
-                            <span class="text-gray-700">tuemail@ejemplo.com</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone text-gray-500 mr-3 w-5 text-center"></i>
-                            <span class="text-gray-700">+123 456 7890</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-gray-500 mr-3 w-5 text-center"></i>
-                            <span class="text-gray-700">Ciudad, País</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <div class="cta-row">
+        <!-- Botón Portafolio con logo de Google Drive -->
+        <a class="btn" href="https://drive.google.com/drive/folders/10-b8bT59m2mvzmMRRaruOlZD_Ny-MGPX?usp=sharing" target="_blank" rel="noopener" aria-label="Abrir portafolio en Google Drive">
+          <!-- Google Drive SVG (inline) -->
+          <svg viewBox="0 0 48 48" role="img" aria-label="Google Drive">
+            <path d="M16.5 6 6 24l6 10.5L22.5 16.5 16.5 6z" fill="#1e8e3e"/>
+            <path d="M31.5 6h-15L22.5 16.5h15L31.5 6z" fill="#4285f4"/>
+            <path d="M42 24 31.5 6 22.5 16.5 33 34.5 42 24z" fill="#fbbc05"/>
+            <path d="M12 34.5 18 45h21L33 34.5H12z" fill="#1967d2"/>
+            <path d="M6 24 12 34.5H33L27 24H6z" fill="#34a853"/>
+          </svg>
+          <span>Portafolio</span>
+        </a>
 
-            <!-- Tarjeta de Redes Sociales -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
-                            <i class="fas fa-share-alt fa-lg"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold text-gray-800">Redes Sociales</h2>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <a href="#" class="flex items-center justify-center p-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors">
-                            <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
-                        </a>
-                        <a href="#" class="flex items-center justify-center p-3 rounded-lg bg-gray-800 text-white hover:bg-gray-900 transition-colors">
-                            <i class="fab fa-github mr-2"></i> GitHub
-                        </a>
-                        <a href="#" class="flex items-center justify-center p-3 rounded-lg bg-blue-400 text-white hover:bg-blue-500 transition-colors">
-                            <i class="fab fa-twitter mr-2"></i> Twitter
-                        </a>
-                        <a href="#" class="flex items-center justify-center p-3 rounded-lg bg-pink-600 text-white hover:bg-pink-700 transition-colors">
-                            <i class="fab fa-instagram mr-2"></i> Instagram
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- Botón de contacto -->
+        <a class="btn btn--brand copy-mail" href="mailto:ing.danisierra.innov@gmail.com" aria-label="Escribir correo a Ingeniería e Innovación Daniel Sierra">
+          <!-- Icono sobre simple -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M2 7.5A2.5 2.5 0 0 1 4.5 5h15A2.5 2.5 0 0 1 22 7.5v9A2.5 2.5 0 0 1 19.5 19h-15A2.5 2.5 0 0 1 2 16.5v-9Zm2.2-.4 7.37 5.24c.27.19.62.19.89 0L19.8 7.1a1 1 0 0 0-.8-.1H5a1 1 0 0 0-.8.1Zm17.3 1.77-6.96 4.95a3 3 0 0 1-3.48 0L4.1 8.87v7.63A1 1 0 0 0 5 17.5h14a1 1 0 0 0 1-.99V8.87Z"/></svg>
+          <span class="nowrap">Contacto</span>
+        </a>
+      </div>
+    </header>
 
-            <!-- Tarjeta de Sobre Mí -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 card-hover md:col-span-2">
-                <div class="p-6">
-                    <div class="flex items-center mb-4">
-                        <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
-                            <i class="fas fa-user fa-lg"></i>
-                        </div>
-                        <h2 class="text-xl font-semibold text-gray-800">Sobre Mí</h2>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        ¡Hola! Soy [Tu Nombre], [breve descripción profesional]. Me apasiona [tus intereses o especialidades]. 
-                        Siempre estoy abierto a nuevas oportunidades y colaboraciones interesantes.
-                    </p>
-                    <p class="text-gray-700">
-                        No dudes en contactarme a través de cualquiera de los medios proporcionados. ¡Espero saber de ti pronto!
-                    </p>
-                </div>
-            </div>
-        </div>
+    <!-- HERO -->
+    <section class="hero" aria-label="Presentación">
+      <span class="badge" aria-label="Cumplimiento normativo">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 14l10 5 10-5-10-5Z"/></svg>
+        Cumplimos RETIE &amp; RETILAB
+      </span>
+      <h2>Ingeniería aplicada para innovar y ejecutar con excelencia</h2>
+      <p class="lead">
+        Materializamos ideas en **infraestructura eléctrica, comunicaciones y seguridad** con enfoque en calidad, seguridad y normatividad colombiana.
+      </p>
 
-        <!-- Botón de WhatsApp flotante para móviles -->
-        <div class="fixed bottom-6 right-6 md:hidden">
-            <a href="https://wa.me/1234567890" class="flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors">
-                <i class="fab fa-whatsapp text-2xl"></i>
+      <div class="grid">
+        <article class="card span-7" aria-label="Sobre la empresa">
+          <h3>Sobre la empresa</h3>
+          <p class="muted">
+            <strong>Ingeniería e Innovación Daniel Sierra</strong> aplica la ingeniería para optimizar y transformar instalaciones:
+            modernización de <em>instalaciones eléctricas</em>, diseño e instalación de <em>gabinetes/armarios profesionales</em> con equipos informáticos y protección eléctrica (incluida <abbr title="Uninterruptible Power Supply">UPS</abbr>), integración de <em>CCTV</em> con su adecuación eléctrica, sistemas de <em>sensórica</em> (detectores de humo, presencia, etc.), <em>sistemas de audio</em> y <em>distribución de red</em>, además de soluciones de <em>iluminación</em>. Operamos con un equipo versátil que convierte la necesidad del cliente en soluciones confiables, cumpliendo estrictamente con <strong>RETIE</strong> y <strong>RETILAB</strong>.
+          </p>
+          <div class="kpis" aria-label="Puntos destacados">
+            <span class="kpi">Instalaciones eléctricas seguras</span>
+            <span class="kpi">Gabinetes con UPS</span>
+            <span class="kpi">CCTV de grado profesional</span>
+            <span class="kpi">Redes &amp; Audio</span>
+            <span class="kpi">Iluminación eficiente</span>
+          </div>
+        </article>
+
+        <article class="card span-5" aria-label="Líder a cargo">
+          <h3>Líder del equipo</h3>
+          <p class="muted">
+            <strong>Daniel Felipe Sierra Carvajal</strong> lidera el equipo más que como dueño: guía, coordina y asegura la ejecución integral.
+            Su trayectoria abarca primero como <em>tecnólogo electricista</em> y posteriormente como <em>ingeniero eléctrico</em>, otorgándole una
+            perspectiva amplia y práctica para resolver problemas y llevar proyectos a término con alto estándar técnico.
+          </p>
+          <p class="muted">Disponibilidad para diagnóstico, diseño y ejecución por fases.</p>
+        </article>
+
+        <article class="card span-6" aria-label="Servicios principales">
+          <h3>Servicios principales</h3>
+          <ul class="clean">
+            <li>Actualización y mejora de instalaciones eléctricas residenciales, comerciales e industriales.</li>
+            <li>Diseño e instalación de armarios/gabinetes profesionales con equipos informáticos y respaldo UPS.</li>
+            <li>Implementación de CCTV (circuito cerrado) con adecuación eléctrica y puesta en marcha.</li>
+            <li>Sensórica: detectores de humo, presencia y sistemas de seguridad especializados.</li>
+            <li>Sistemas de audio, cableado estructurado y distribución de red.</li>
+            <li>Proyectos de iluminación (interior/exterior) “pan comido” para nuestro equipo.</li>
+            <li>Cumplimiento normativo: RETIE y RETILAB.</li>
+          </ul>
+        </article>
+
+        <article class="card span-6" aria-label="Contacto y portafolio">
+          <h3>Contactar &amp; Portafolio</h3>
+          <p class="muted">
+            Escríbenos a <a href="mailto:ing.danisierra.innov@gmail.com">ing.danisierra.innov@gmail.com</a> para una asesoría o visita técnica.
+          </p>
+          <div class="cta-row" role="group" aria-label="Acciones">
+            <a class="btn btn--brand" href="mailto:ing.danisierra.innov@gmail.com" aria-label="Enviar correo">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M2 7.5A2.5 2.5 0 0 1 4.5 5h15A2.5 2.5 0 0 1 22 7.5v9A2.5 2.5 0 0 1 19.5 19h-15A2.5 2.5 0 0 1 2 16.5v-9Zm2.2-.4 7.37 5.24c.27.19.62.19.89 0L19.8 7.1a1 1 0 0 0-.8-.1H5a1 1 0 0 0-.8.1Zm17.3 1.77-6.96 4.95a3 3 0 0 1-3.48 0L4.1 8.87v7.63A1 1 0 0 0 5 17.5h14a1 1 0 0 0 1-.99V8.87Z"/></svg>
+              <span>Solicitar cotización</span>
             </a>
-        </div>
-    </div>
+            <a class="btn" href="https://drive.google.com/drive/folders/10-b8bT59m2mvzmMRRaruOlZD_Ny-MGPX?usp=sharing" target="_blank" rel="noopener" aria-label="Ver portafolio">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M16.5 6 6 24l6 10.5L22.5 16.5 16.5 6z" fill="#1e8e3e"/>
+                <path d="M31.5 6h-15L22.5 16.5h15L31.5 6z" fill="#4285f4"/>
+                <path d="M42 24 31.5 6 22.5 16.5 33 34.5 42 24z" fill="#fbbc05"/>
+                <path d="M12 34.5 18 45h21L33 34.5H12z" fill="#1967d2"/>
+                <path d="M6 24 12 34.5H33L27 24H6z" fill="#34a853"/>
+              </svg>
+              <span>Ver portafolio</span>
+            </a>
+          </div>
+          <div class="divider" role="separator" aria-hidden="true"></div>
+          <p class="muted">¿Buscas algo específico? Comparte el contexto (sitio, carga, planos) y te proponemos una solución por etapas.</p>
+        </article>
+      </div>
+    </section>
 
-    <footer class="gradient-bg text-white py-8">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="#" class="social-icon text-white hover:text-gray-200">
-                    <i class="fab fa-github fa-lg"></i>
-                </a>
-                <a href="#" class="social-icon text-white hover:text-gray-200">
-                    <i class="fab fa-linkedin-in fa-lg"></i>
-                </a>
-                <a href="#" class="social-icon text-white hover:text-gray-200">
-                    <i class="fab fa-twitter fa-lg"></i>
-                </a>
-                <a href="#" class="social-icon text-white hover:text-gray-200">
-                    <i class="fab fa-instagram fa-lg"></i>
-                </a>
-            </div>
-            <p class="opacity-80">© <span id="year"></span> [Tu Nombre]. Todos los derechos reservados.</p>
-        </div>
+    <footer>
+      © <span id="y"></span> Ingeniería e Innovación Daniel Sierra · <span class="nowrap">Daniel Felipe Sierra Carvajal</span> ·
+      <a href="mailto:ing.danisierra.innov@gmail.com">ing.danisierra.innov@gmail.com</a>
     </footer>
+  </div>
 
-    <script>
-        // Actualizar el año automáticamente
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Efecto suave al hacer scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+  <!-- Año dinámico sin dependencias -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- SEO básico en JSON-LD (Organización + Persona) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ingeniería e Innovación Daniel Sierra",
+    "url": "https://tuusuario.github.io/mi-pagina/",
+    "description": "Soluciones de ingeniería: instalaciones eléctricas, gabinetes con UPS, CCTV, sensórica, audio, redes e iluminación, con cumplimiento RETIE y RETILAB.",
+    "email": "ing.danisierra.innov@gmail.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Daniel Felipe Sierra Carvajal",
+      "jobTitle": "Líder de proyecto"
+    },
+    "sameAs": [
+      "https://drive.google.com/drive/folders/10-b8bT59m2mvzmMRRaruOlZD_Ny-MGPX"
+    ]
+  }
+  </script>
 </body>
 </html>
