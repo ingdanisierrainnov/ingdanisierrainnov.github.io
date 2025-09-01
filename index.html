@@ -3,189 +3,191 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ingeniería e Innovación Daniel Sierra | Daniel Felipe Sierra Carvajal</title>
-  <meta name="description" content="Ingeniería e Innovación Daniel Sierra: soluciones en instalaciones eléctricas, gabinetes profesionales con UPS, CCTV, sensórica, audio, redes y alumbrado, cumpliendo RETIE y RETILAB." />
+  <title>Ingeniería e Innovación Daniel Sierra | Sistemas eléctricos, electrónicos y redes</title>
+  <meta name="description" content="Ingeniería e Innovación Daniel Sierra: ejecución profesional de instalaciones eléctricas, gabinetes con UPS, CCTV, sensórica, audio, redes e iluminación. Cumplimos RETIE y RETILAB. Contacto: ing.danisierra.innov@gmail.com">
   <meta name="theme-color" content="#0f172a">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:title" content="Ingeniería e Innovación Daniel Sierra">
+  <meta property="og:description" content="Instalaciones eléctricas y electrónicas, gabinetes con UPS, CCTV, sensórica, audio y redes. Cumplimos RETIE y RETILAB.">
+  <meta property="og:type" content="website">
+
+  <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #0b1220;
-      --panel: #0f172a;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --brand: #22c55e;
-      --accent: #38bdf8;
-      --border: #1e293b;
-      --maxw: 1000px;
-      --radius: 16px;
-      --shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    :root{
+      --bg:#0b1220;
+      --panel:#0f172a;
+      --panel-2:#0b1426;
+      --text:#f8fafc;
+      --muted:#94a3b8;
+      --border:#1e293b;
+      --brand:#22c55e;
+      --accent:#38bdf8;
+      --violet:#a78bfa;
+      --radius:16px;
+      --maxw:1100px;
+      --shadow:0 24px 60px rgba(0,0,0,.35);
+      --ring:0 0 0 3px rgba(56,189,248,.25);
+      --grad: linear-gradient(90deg, #22c55e, #38bdf8 40%, #a78bfa);
+      --motion: cubic-bezier(.2,.8,.2,1);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body {
-      margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      color: var(--text);
-      background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
-                  radial-gradient(900px 600px at 110% 10%, rgba(34,197,94,.12), transparent 60%),
-                  var(--bg);
-      line-height: 1.6;
-      min-height: 100vh;
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at -10% -20%, rgba(56,189,248,.15), transparent 60%),
+        radial-gradient(900px 600px at 110% -10%, rgba(167,139,250,.12), transparent 60%),
+        radial-gradient(900px 600px at 50% 120%, rgba(34,197,94,.10), transparent 60%),
+        var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    @supports (font-variation-settings: normal) {
-      body {
-        font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      }
-    }
-    a{color:inherit}
+    a{color:inherit; text-decoration: none}
+    a:focus-visible, button:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 10px; }
+
     .wrap{max-width:var(--maxw); margin:0 auto; padding:24px}
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
 
-    header:hover {
-      background: rgba(15, 23, 42, 0.8);
-      border-color: #334155;
+    /* HEADER */
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:18px 20px; border-radius:var(--radius);
+      background: rgba(15,23,42,.65);
+      border:1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      transition: transform .2s var(--motion), background .3s var(--motion), border-color .3s var(--motion);
     }
-    .brand{
-      display:flex; align-items:center; gap:14px; text-decoration:none;
-    }
+    header:hover{ transform: translateY(-2px); background: rgba(15,23,42,.75); border-color:#334155}
+
+    .brand{display:flex; align-items:center; gap:14px}
     .logo{
-      width:44px; height:44px; display:grid; place-items:center;
-      border-radius:10px; background:linear-gradient(135deg,#111827,#0b1220);
+      width:48px; height:48px; display:grid; place-items:center; border-radius:12px;
+      background:linear-gradient(135deg, #0b1220, #0d1629);
       border:1px solid var(--border);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
       overflow:hidden;
     }
-    .brand h1{font-size:18px; margin:0; line-height:1.2}
-    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    .brand h1{margin:0; font-size:18px; line-height:1.2}
+    .brand small{display:block; color:var(--muted)}
+
     .cta-row{display:flex; gap:10px; flex-wrap:wrap}
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      background: rgba(11, 20, 38, 0.7);
-      transition: var(--transition);
-      white-space: nowrap;
-      font-weight: 500;
-      will-change: transform;
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:12px 16px;
+      background: var(--panel-2); border:1px solid var(--border); border-radius:12px;
+      white-space:nowrap; font-weight:600; letter-spacing:.2px; will-change: transform, box-shadow, border-color;
+      transition: transform .15s var(--motion), box-shadow .2s var(--motion), border-color .2s var(--motion), filter .2s var(--motion), background .2s var(--motion);
     }
-
-    .btn:hover {
-      transform: translateY(-2px) scale(1.02);
-      background: rgba(11, 20, 38, 0.9);
-      border-color: #475569;
-    }
-    .btn:hover{transform: translateY(-1px); border-color:#334155}
-    .btn--brand{background: linear-gradient(180deg, #16a34a, #15803d); border-color: rgba(255,255,255,.06);}
-    .btn--brand:hover{filter: brightness(1.05)}
+    .btn:hover{ transform: translateY(-2px); border-color:#3b4a61; box-shadow:0 10px 24px rgba(0,0,0,.25) }
     .btn svg{width:18px; height:18px; flex:0 0 auto}
+    .btn--brand{ background:linear-gradient(180deg, #16a34a, #15803d); border-color: transparent; color:white}
+    .btn--brand:hover{ filter:brightness(1.06)}
+    .btn--ghost{ background: transparent }
 
-    .hero {
-      margin-top: 32px;
-      padding: 40px 28px;
-      background: linear-gradient(180deg, rgba(15,23,42,.85), rgba(2,6,23,.9));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      transition: var(--transition);
+    /* HERO */
+    .hero{
+      margin-top:28px; padding:48px 28px; border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(15,23,42,.85), rgba(2,6,23,.92));
+      border:1px solid var(--border); box-shadow: var(--shadow);
+      position:relative; overflow:hidden;
+      transition: transform .2s var(--motion), box-shadow .2s var(--motion);
+    }
+    .hero:hover{ transform: translateY(-2px); box-shadow: 0 32px 70px rgba(0,0,0,.35) }
+
+    .hero::after{
+      content:""; position:absolute; inset:-40% -40% auto auto; width:60%; height:140%;
+      background: conic-gradient(from 180deg at 50% 50%, rgba(56,189,248,.12), rgba(167,139,250,.16), rgba(34,197,94,.12), rgba(56,189,248,.12));
+      filter: blur(48px); pointer-events:none;
+      transform: rotate(12deg);
     }
 
-    .hero:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+    .badge{
+      display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#dbeafe;
+      padding:8px 10px; border-radius:999px; border:1px solid var(--border);
+      background: rgba(11,20,38,.7);
     }
-    .hero h2{font-size:28px; margin:0 0 6px}
-    .hero p.lead{margin:0 0 18px; color:var(--muted)}
-    .grid{
-      display:grid; gap:16px; margin-top:18px;
-      grid-template-columns: repeat(12, minmax(0,1fr));
+
+    .title{
+      font-size:34px; margin:10px 0 8px; line-height:1.15;
+      background: var(--grad);
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+      font-weight:800;
+      letter-spacing:.2px;
     }
+    .lead{ color:var(--muted); margin:0 0 18px }
+
+    .grid{ display:grid; gap:16px; margin-top:18px; grid-template-columns: repeat(12, minmax(0,1fr)); }
     .card{
-      grid-column: span 12;
-      background: var(--panel);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:20px;
+      grid-column: span 12; background: var(--panel); border:1px solid var(--border);
+      border-radius:var(--radius); padding:22px; position:relative; overflow:hidden;
+      transition: transform .18s var(--motion), border-color .2s var(--motion), box-shadow .2s var(--motion);
     }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .brand {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .hero h2 {
-        font-size: 28px;
-      }
-      
-      .grid {
-        grid-template-columns: 1fr !important;
-      }
-      
-      .card {
-        grid-column: span 1 !important;
-      }
-    }
+    .card:hover{ transform: translateY(-2px); border-color:#334155; box-shadow: 0 18px 40px rgba(0,0,0,.28) }
+    .card h3{ margin:0 0 10px; font-size:20px }
+    .muted{ color:var(--muted) }
 
-    @media (min-width: 768px) {
-      .card.span-7 { grid-column: span 7; }
-      .card.span-5 { grid-column: span 5; }
-      .card.span-6 { grid-column: span 6; }
-      .hero h2 { font-size: 36px; }
-    }
+    .kpis{ display:flex; gap:12px; flex-wrap:wrap; margin-top:14px }
+    .kpi{ padding:10px 12px; border:1px dashed #334155; border-radius:12px; font-size:13px; color:#cbd5e1; background:#0b1426 }
 
-    @media (min-width: 1024px) {
-      .hero h2 { font-size: 40px; }
+    .list{ margin:10px 0 0 0; padding-left:18px }
+    .list li+li{ margin-top:6px }
+
+    .feature{
+      display:flex; gap:10px; align-items:flex-start; margin:10px 0 0;
     }
-    .card h3{margin:0 0 8px; font-size:20px}
-    .muted{color:var(--muted)}
-    ul.clean{margin:10px 0 0 0; padding-left:18px}
-    li+li{margin-top:6px}
-    .kpis{display:flex; gap:14px; flex-wrap:wrap; margin-top:14px}
-    .kpi{padding:10px 12px; border:1px dashed #334155; border-radius:12px; font-size:13px; color:#cbd5e1; background:#0b1426}
-    footer{
-      margin:26px 0 10px; color:var(--muted); font-size:13px; text-align:center;
+    .feature svg{ margin-top:2px; opacity:.9 }
+
+    .divider{ height:1px; background:linear-gradient(90deg, transparent, #1f2937, transparent); margin:18px 0 }
+
+    footer{ margin:28px 0 12px; color:var(--muted); font-size:13px; text-align:center }
+
+    .nowrap{ white-space:nowrap }
+    .copy-mail{ font-variant-ligatures: no-contextual; }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap }
+
+    /* Responsive */
+    @media (max-width: 768px){
+      header{ flex-direction:column; text-align:center }
+      .brand{ flex-direction:column; text-align:center }
+      .grid{ grid-template-columns: 1fr !important }
+      .card{ grid-column: span 1 !important }
+      .title{ font-size:28px }
     }
-    .divider{height:1px; background:linear-gradient(90deg, transparent, #1f2937, transparent); margin:18px 0}
-    .badge{display:inline-flex; align-items:center; gap:8px; font-size:12px; color:#cbd5e1; padding:8px 10px; border-radius:999px; border:1px solid var(--border); background:#0b1426}
-    .nowrap{white-space:nowrap}
-    .nowrap a{word-break:keep-all}
-    .copy-mail{font-variant-ligatures: no-contextual;}
+    @media (min-width: 768px){
+      .card.span-7{ grid-column: span 7 }
+      .card.span-5{ grid-column: span 5 }
+      .card.span-6{ grid-column: span 6 }
+      .title{ font-size:40px }
+    }
+    @media (min-width: 1040px){ .title{ font-size:44px } }
+
+    /* Toast */
+    .toast{
+      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: rgba(2,6,23,.9); color:#e2e8f0; padding:10px 14px; border-radius:12px;
+      border:1px solid #334155; box-shadow: var(--shadow); opacity:0; pointer-events:none;
+      transition: transform .2s var(--motion), opacity .2s var(--motion);
+      z-index: 50; font-size: 14px;
+    }
+    .toast.show{ opacity:1; transform: translateX(-50%) translateY(0) }
+
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- ENCABEZADO -->
+    <!-- HEADER -->
     <header aria-label="Encabezado del sitio">
       <a class="brand" href="#" aria-label="Inicio">
         <span class="logo" aria-hidden="true">
-          <!-- Marca mínima (monograma DS) -->
+          <!-- Monograma DS -->
           <svg viewBox="0 0 64 64" role="img" aria-label="Logo DS">
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -199,14 +201,13 @@
         </span>
         <span>
           <h1>Ingeniería e Innovación Daniel Sierra</h1>
-          <p>Daniel Felipe Sierra Carvajal · Líder de proyecto</p>
+          <small>Soluciones eléctricas, electrónicas y TI</small>
         </span>
       </a>
 
-      <div class="cta-row">
-        <!-- Botón Portafolio con logo de Google Drive -->
+      <div class="cta-row" role="group" aria-label="Acciones rápidas">
+        <!-- Portafolio -->
         <a class="btn" href="https://drive.google.com/drive/folders/10-b8bT59m2mvzmMRRaruOlZD_Ny-MGPX?usp=sharing" target="_blank" rel="noopener" aria-label="Abrir portafolio en Google Drive">
-          <!-- Google Drive SVG (inline) -->
           <svg viewBox="0 0 48 48" role="img" aria-label="Google Drive">
             <path d="M16.5 6 6 24l6 10.5L22.5 16.5 16.5 6z" fill="#1e8e3e"/>
             <path d="M31.5 6h-15L22.5 16.5h15L31.5 6z" fill="#4285f4"/>
@@ -217,12 +218,17 @@
           <span>Portafolio</span>
         </a>
 
-        <!-- Botón de contacto -->
-        <a class="btn btn--brand copy-mail" href="mailto:ing.danisierra.innov@gmail.com" aria-label="Escribir correo a Ingeniería e Innovación Daniel Sierra">
-          <!-- Icono sobre simple -->
+        <!-- Contacto (mailto) -->
+        <a class="btn btn--brand copy-mail" id="mailto" href="mailto:ing.danisierra.innov@gmail.com?subject=Solicitud%20de%20cotizaci%C3%B3n%20-%20[Proyecto]&body=Hola%20Daniel%2C%0A%0ANecesito%20apoyo%20en:%20(instalaciones%20el%C3%A9ctricas%2C%20CCTV%2C%20gabinete%20con%20UPS%2C%20sens%C3%B3rica%2C%20audio%2C%20redes%2C%20iluminaci%C3%B3n).%0A%0ALugar%3A%20%0AAlcance%3A%20%0ACronograma%3A%20%0APresupuesto%20referente%3A%20%0A%0AGracias." aria-label="Escribir correo a Ingeniería e Innovación Daniel Sierra">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M2 7.5A2.5 2.5 0 0 1 4.5 5h15A2.5 2.5 0 0 1 22 7.5v9A2.5 2.5 0 0 1 19.5 19h-15A2.5 2.5 0 0 1 2 16.5v-9Zm2.2-.4 7.37 5.24c.27.19.62.19.89 0L19.8 7.1a1 1 0 0 0-.8-.1H5a1 1 0 0 0-.8.1Zm17.3 1.77-6.96 4.95a3 3 0 0 1-3.48 0L4.1 8.87v7.63A1 1 0 0 0 5 17.5h14a1 1 0 0 0 1-.99V8.87Z"/></svg>
-          <span class="nowrap">Contacto</span>
+          <span class="nowrap">Solicitar cotización</span>
         </a>
+
+        <!-- Copiar email -->
+        <button class="btn btn--ghost" id="copyEmail" aria-label="Copiar correo electrónico">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+          <span>Copiar correo</span>
+        </button>
       </div>
     </header>
 
@@ -232,22 +238,27 @@
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 14l10 5 10-5-10-5Z"/></svg>
         Cumplimos RETIE &amp; RETILAB
       </span>
-      <h2>Ingeniería aplicada para innovar y ejecutar con excelencia</h2>
+      <h2 class="title">Ingeniería aplicada para convertir ideas en infraestructura confiable</h2>
       <p class="lead">
-        Materializamos ideas en **infraestructura eléctrica, comunicaciones y seguridad** con enfoque en calidad, seguridad y normatividad colombiana.
+        Diseñamos, instalamos y dejamos funcionando <strong>energía, electrónica y TI</strong>:
+        desde tableros e instalaciones eléctricas hasta <strong>gabinetes profesionales con UPS</strong>,
+        <strong>CCTV</strong>, <strong>sensórica</strong>, <strong>audio</strong>, <strong>cableado estructurado</strong> e <strong>iluminación</strong>.
       </p>
 
       <div class="grid">
         <article class="card span-7" aria-label="Sobre la empresa">
           <h3>Sobre la empresa</h3>
           <p class="muted">
-            <strong>Ingeniería e Innovación Daniel Sierra</strong> aplica la ingeniería para optimizar y transformar instalaciones:
-            modernización de <em>instalaciones eléctricas</em>, diseño e instalación de <em>gabinetes/armarios profesionales</em> con equipos informáticos y protección eléctrica (incluida <abbr title="Uninterruptible Power Supply">UPS</abbr>), integración de <em>CCTV</em> con su adecuación eléctrica, sistemas de <em>sensórica</em> (detectores de humo, presencia, etc.), <em>sistemas de audio</em> y <em>distribución de red</em>, además de soluciones de <em>iluminación</em>. Operamos con un equipo versátil que convierte la necesidad del cliente en soluciones confiables, cumpliendo estrictamente con <strong>RETIE</strong> y <strong>RETILAB</strong>.
+            <strong>Ingeniería e Innovación Daniel Sierra</strong> integra buenas prácticas y normatividad colombiana para
+            mejorar y modernizar infraestructuras críticas. Ejecutamos con enfoque en <em>seguridad eléctrica</em>, <em>orden</em> y <em>mantenibilidad</em>:
+            <strong>instalaciones eléctricas</strong>, <strong>gabinetes/armarios profesionales</strong> con protección eléctrica y <abbr title="Uninterruptible Power Supply">UPS</abbr>,
+            integración de <strong>CCTV</strong> con su adecuación eléctrica, <strong>sensórica</strong> (detectores de humo, presencia y más),
+            <strong>sistemas de audio</strong>, <strong>distribución de red</strong> e <strong>iluminación</strong>.
           </p>
           <div class="kpis" aria-label="Puntos destacados">
-            <span class="kpi">Instalaciones eléctricas seguras</span>
+            <span class="kpi">Instalaciones seguras</span>
             <span class="kpi">Gabinetes con UPS</span>
-            <span class="kpi">CCTV de grado profesional</span>
+            <span class="kpi">CCTV profesional</span>
             <span class="kpi">Redes &amp; Audio</span>
             <span class="kpi">Iluminación eficiente</span>
           </div>
@@ -256,33 +267,43 @@
         <article class="card span-5" aria-label="Líder a cargo">
           <h3>Líder del equipo</h3>
           <p class="muted">
-            <strong>Daniel Felipe Sierra Carvajal</strong> lidera el equipo más que como dueño: guía, coordina y asegura la ejecución integral.
-            Su trayectoria abarca primero como <em>tecnólogo electricista</em> y posteriormente como <em>ingeniero eléctrico</em>, otorgándole una
-            perspectiva amplia y práctica para resolver problemas y llevar proyectos a término con alto estándar técnico.
+            <strong>Daniel Felipe Sierra Carvajal</strong> guía al equipo con liderazgo técnico y enfoque práctico.
+            Su trayectoria combina una base sólida como <em>tecnólogo electricista</em> y la visión integral de un
+            <em>ingeniero electrónico</em>, lo que aporta versatilidad para <strong>diagnosticar, diseñar y ejecutar</strong>
+            proyectos con alto estándar y solución efectiva de problemas.
           </p>
-          <p class="muted">Disponibilidad para diagnóstico, diseño y ejecución por fases.</p>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <p class="muted">Planificación por fases, documentación y entrega ordenada (planos, memorias, marcado y etiquetado).</p>
+          </div>
+          <div class="feature">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <p class="muted">Cumplimiento estricto de <strong>RETIE</strong> y <strong>RETILAB</strong>.</p>
+          </div>
         </article>
 
         <article class="card span-6" aria-label="Servicios principales">
           <h3>Servicios principales</h3>
-          <ul class="clean">
-            <li>Actualización y mejora de instalaciones eléctricas residenciales, comerciales e industriales.</li>
-            <li>Diseño e instalación de armarios/gabinetes profesionales con equipos informáticos y respaldo UPS.</li>
-            <li>Implementación de CCTV (circuito cerrado) con adecuación eléctrica y puesta en marcha.</li>
-            <li>Sensórica: detectores de humo, presencia y sistemas de seguridad especializados.</li>
-            <li>Sistemas de audio, cableado estructurado y distribución de red.</li>
-            <li>Proyectos de iluminación (interior/exterior) “pan comido” para nuestro equipo.</li>
-            <li>Cumplimiento normativo: RETIE y RETILAB.</li>
+          <ul class="list">
+            <li>Actualización y mejora de instalaciones eléctricas (residencial, comercial e industrial).</li>
+            <li>Diseño e instalación de <strong>gabinetes profesionales</strong> con respaldo <strong>UPS</strong> y protección eléctrica.</li>
+            <li>Implementación de <strong>CCTV</strong> con adecuación eléctrica y puesta en marcha.</li>
+            <li><strong>Sensórica</strong>: detectores de humo, presencia y sistemas de seguridad.</li>
+            <li><strong>Audio</strong>, <strong>cableado estructurado</strong> y distribución de red.</li>
+            <li>Proyectos de <strong>iluminación</strong> interior y exterior.</li>
+            <li>Asesoría, diagnóstico y documentación técnica.</li>
           </ul>
         </article>
 
         <article class="card span-6" aria-label="Contacto y portafolio">
-          <h3>Contactar &amp; Portafolio</h3>
+          <h3>Contacto &amp; Portafolio</h3>
           <p class="muted">
-            Escríbenos a <a href="mailto:ing.danisierra.innov@gmail.com">ing.danisierra.innov@gmail.com</a> para una asesoría o visita técnica.
+            ¿Tienes un proyecto? Escríbenos a
+            <a href="mailto:ing.danisierra.innov@gmail.com">ing.danisierra.innov@gmail.com</a>
+            o revisa el <a href="https://drive.google.com/drive/folders/10-b8bT59m2mvzmMRRaruOlZD_Ny-MGPX?usp=sharing" target="_blank" rel="noopener">portafolio</a>.
           </p>
-          <div class="cta-row" role="group" aria-label="Acciones">
-            <a class="btn btn--brand" href="mailto:ing.danisierra.innov@gmail.com" aria-label="Enviar correo">
+          <div class="actions" role="group" aria-label="Acciones de contacto">
+            <a class="btn btn--brand" href="mailto:ing.danisierra.innov@gmail.com?subject=Solicitud%20de%20cotizaci%C3%B3n%20-%20[Proyecto]&body=Hola%20Daniel%2C%0A%0ACompartir%C3%A9%20el%20alcance%20para%20cotizar%3A%0A-%20Ubicaci%C3%B3n%3A%20%0A-%20Servicios%20requeridos%3A%20(instalaciones%2C%20CCTV%2C%20gabinete%20con%20UPS%2C%20sens%C3%B3rica%2C%20audio%2C%20redes%2C%20iluminaci%C3%B3n)%0A-%20Cronograma%3A%20%0A-%20Restricciones%20o%20normativa%3A%20%0A%0AGracias." aria-label="Enviar correo">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M2 7.5A2.5 2.5 0 0 1 4.5 5h15A2.5 2.5 0 0 1 22 7.5v9A2.5 2.5 0 0 1 19.5 19h-15A2.5 2.5 0 0 1 2 16.5v-9Zm2.2-.4 7.37 5.24c.27.19.62.19.89 0L19.8 7.1a1 1 0 0 0-.8-.1H5a1 1 0 0 0-.8.1Zm17.3 1.77-6.96 4.95a3 3 0 0 1-3.48 0L4.1 8.87v7.63A1 1 0 0 0 5 17.5h14a1 1 0 0 0 1-.99V8.87Z"/></svg>
               <span>Solicitar cotización</span>
             </a>
@@ -296,39 +317,69 @@
               </svg>
               <span>Ver portafolio</span>
             </a>
+            <button class="btn btn--ghost" id="copyEmail2" aria-label="Copiar correo electrónico">📋 Copiar correo</button>
           </div>
+
           <div class="divider" role="separator" aria-hidden="true"></div>
-          <p class="muted">¿Buscas algo específico? Comparte el contexto (sitio, carga, planos) y te proponemos una solución por etapas.</p>
+          <p class="muted">Cuéntanos el contexto (sitio, cargas, planos, restricciones). Te proponemos una solución por etapas con entregables claros.</p>
         </article>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Ingeniería e Innovación Daniel Sierra · <span class="nowrap">Daniel Felipe Sierra Carvajal</span> ·
-      <a href="mailto:ing.danisierra.innov@gmail.com">ing.danisierra.innov@gmail.com</a>
+      © <span id="y"></span> Ingeniería e Innovación Daniel Sierra ·
+      <span class="nowrap">Daniel Felipe Sierra Carvajal</span> ·
+      <a class="copy-mail" href="mailto:ing.danisierra.innov@gmail.com">ing.danisierra.innov@gmail.com</a>
     </footer>
   </div>
 
-  <!-- Año dinámico sin dependencias -->
+  <!-- Toast copy -->
+  <div class="toast" id="toast" role="status" aria-live="polite">Correo copiado: ing.danisierra.innov@gmail.com</div>
+
+  <!-- JS mínimo -->
   <script>
+    // Año dinámico
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Copiar correo al portapapeles
+    const email = 'ing.danisierra.innov@gmail.com';
+    const toast = document.getElementById('toast');
+
+    function showToast(){
+      toast.classList.add('show');
+      setTimeout(()=> toast.classList.remove('show'), 1800);
+    }
+    async function copyMail(){
+      try{
+        await navigator.clipboard.writeText(email);
+        showToast();
+      }catch(e){
+        // Fallback para navegadores sin clipboard API
+        const t = document.createElement('textarea');
+        t.value = email; document.body.appendChild(t);
+        t.select(); document.execCommand('copy'); document.body.removeChild(t);
+        showToast();
+      }
+    }
+    document.getElementById('copyEmail').addEventListener('click', copyMail);
+    document.getElementById('copyEmail2').addEventListener('click', copyMail);
   </script>
 
-  <!-- SEO básico en JSON-LD (Organización + Persona) -->
+  <!-- SEO: JSON-LD Organización + Persona -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Ingeniería e Innovación Daniel Sierra",
-    "url": "https://tuusuario.github.io/mi-pagina/",
-    "description": "Soluciones de ingeniería: instalaciones eléctricas, gabinetes con UPS, CCTV, sensórica, audio, redes e iluminación, con cumplimiento RETIE y RETILAB.",
-    "email": "ing.danisierra.innov@gmail.com",
-    "founder": {
-      "@type": "Person",
-      "name": "Daniel Felipe Sierra Carvajal",
-      "jobTitle": "Líder de proyecto"
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Ingeniería e Innovación Daniel Sierra",
+    "url":"https://tuusuario.github.io/mi-pagina/",
+    "description":"Instalaciones eléctricas, gabinetes con UPS, CCTV, sensórica, audio, redes e iluminación con cumplimiento RETIE y RETILAB.",
+    "email":"ing.danisierra.innov@gmail.com",
+    "founder":{
+      "@type":"Person",
+      "name":"Daniel Felipe Sierra Carvajal",
+      "jobTitle":"Líder del equipo · Ingeniero electrónico"
     },
-    "sameAs": [
+    "sameAs":[
       "https://drive.google.com/drive/folders/10-b8bT59m2mvzmMRRaruOlZD_Ny-MGPX"
     ]
   }
