@@ -6,38 +6,62 @@
   <title>Ingeniería e Innovación Daniel Sierra | Daniel Felipe Sierra Carvajal</title>
   <meta name="description" content="Ingeniería e Innovación Daniel Sierra: soluciones en instalaciones eléctricas, gabinetes profesionales con UPS, CCTV, sensórica, audio, redes y alumbrado, cumpliendo RETIE y RETILAB." />
   <meta name="theme-color" content="#0f172a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#0b1220;          /* fondo oscuro elegante */
-      --panel:#0f172a;       /* panel/cards */
-      --text:#e5e7eb;        /* texto principal */
-      --muted:#9ca3af;       /* texto secundario */
-      --brand:#22c55e;       /* acento */
-      --accent:#38bdf8;      /* acento 2 */
-      --border:#1f2937;      /* bordes */
-      --maxw:1000px;
-      --radius:14px;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    :root {
+      --bg: #0b1220;
+      --panel: #0f172a;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --brand: #22c55e;
+      --accent: #38bdf8;
+      --border: #1e293b;
+      --maxw: 1000px;
+      --radius: 16px;
+      --shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      color:var(--text);
-      background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.12), transparent 60%),
-                  radial-gradient(900px 600px at 110% 10%, rgba(34,197,94,.10), transparent 60%),
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.15), transparent 60%),
+                  radial-gradient(900px 600px at 110% 10%, rgba(34,197,94,.12), transparent 60%),
                   var(--bg);
-      line-height:1.6;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    @supports (font-variation-settings: normal) {
+      body {
+        font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
     }
     a{color:inherit}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:24px}
-    header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:18px 22px; background:rgba(15,23,42,.6);
-      border:1px solid var(--border); border-radius:var(--radius);
-      backdrop-filter: blur(6px);
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    header:hover {
+      background: rgba(15, 23, 42, 0.8);
+      border-color: #334155;
     }
     .brand{
       display:flex; align-items:center; gap:14px; text-decoration:none;
@@ -53,22 +77,44 @@
     .brand p{margin:0; font-size:12px; color:var(--muted)}
     .cta-row{display:flex; gap:10px; flex-wrap:wrap}
 
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:12px; text-decoration:none;
-      border:1px solid var(--border); background:#0b1426;
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
-      white-space:nowrap;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: rgba(11, 20, 38, 0.7);
+      transition: var(--transition);
+      white-space: nowrap;
+      font-weight: 500;
+      will-change: transform;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      background: rgba(11, 20, 38, 0.9);
+      border-color: #475569;
     }
     .btn:hover{transform: translateY(-1px); border-color:#334155}
     .btn--brand{background: linear-gradient(180deg, #16a34a, #15803d); border-color: rgba(255,255,255,.06);}
     .btn--brand:hover{filter: brightness(1.05)}
     .btn svg{width:18px; height:18px; flex:0 0 auto}
 
-    .hero{
-      margin-top:24px; padding:42px 26px;
-      background: linear-gradient(180deg, rgba(15,23,42,.8), rgba(2,6,23,.8));
-      border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow);
+    .hero {
+      margin-top: 32px;
+      padding: 40px 28px;
+      background: linear-gradient(180deg, rgba(15,23,42,.85), rgba(2,6,23,.9));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
     }
     .hero h2{font-size:28px; margin:0 0 6px}
     .hero p.lead{margin:0 0 18px; color:var(--muted)}
@@ -83,11 +129,39 @@
       border-radius:var(--radius);
       padding:20px;
     }
-    @media (min-width:720px){
-      .card.span-7{grid-column: span 7;}
-      .card.span-5{grid-column: span 5;}
-      .card.span-6{grid-column: span 6;}
-      .hero h2{font-size:34px}
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .brand {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .hero h2 {
+        font-size: 28px;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .card {
+        grid-column: span 1 !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .card.span-7 { grid-column: span 7; }
+      .card.span-5 { grid-column: span 5; }
+      .card.span-6 { grid-column: span 6; }
+      .hero h2 { font-size: 36px; }
+    }
+
+    @media (min-width: 1024px) {
+      .hero h2 { font-size: 40px; }
     }
     .card h3{margin:0 0 8px; font-size:20px}
     .muted{color:var(--muted)}
